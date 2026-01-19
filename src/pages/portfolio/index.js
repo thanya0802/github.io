@@ -1,51 +1,92 @@
 import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col } from "react-bootstrap";
-import { dataportfolio, meta } from "../../content_option";
+import { Container } from "react-bootstrap";
+import {
+  dataportfolio,
+  skillsGrouped,
+  experience,
+  meta,
+} from "../../content_option";
 
 export const Portfolio = () => {
   return (
     <HelmetProvider>
-      <Container className="Portfolio-header">
+      <Container className="portfolio-page">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Portfolio | {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
 
-        <Row className="mb-5 mt-3 pt-md-3">
-          <Col lg="8">
-            <h1 className="display-4 mb-4">Portfolio</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
-          </Col>
-        </Row>
+        {/* ================= PROFILE SUMMARY ================= */}
+        <section className="portfolio-hero">
+          <h1>Profile Summary</h1>
+          <p className="section-subtitle">
+            Academic Background and Teachnical Expertise
+          </p>
 
-        <div className="portfolio-list">
-          {dataportfolio.map((project, i) => (
-            <div key={i} className="portfolio-row">
-              {/* LEFT: IMAGE */}
-              <div className="portfolio-image">
-                <img src={project.img} alt={project.title} />
+          <p className="hero-text">
+            I am a Master of Science student in Data Science at Northeastern
+            University’s Khoury College of Computer Sciences. I specialize in
+            Machine Learning, Natural Language Processing, and Large Language
+            Models, with experience across research, teaching, and industry.
+            I focus on building scalable, reliable AI systems with real-world
+            impact.
+          </p>
+        </section>
+
+        {/* ================= SKILLS ================= */}
+        <section className="portfolio-section">
+          <h2>Skills</h2>
+
+          <div className="skills-grid">
+            {skillsGrouped.map((group, i) => (
+              <div key={i} className="skill-card">
+                <h4>{group.category}</h4>
+                <p>{group.items.join(" · ")}</p>
               </div>
+            ))}
+          </div>
+        </section>
 
-              {/* RIGHT: CONTENT */}
-              <div className="portfolio-text">
-                <h4>{project.title}</h4>
+        {/* ================= EXPERIENCE ================= */}
+        <section className="portfolio-section">
+          <h2>Experience</h2>
+
+          <div className="experience-list">
+            {experience.map((item, i) => (
+              <div key={i} className="experience-item">
+                <h4>{item.role}</h4>
+                <p className="org">{item.org}</p>
+                <span>{item.period}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ================= PROJECTS ================= */}
+        <section className="portfolio-section">
+          <h2>Projects</h2>
+
+          {dataportfolio.map((project, i) => (
+            <div key={i} className="project-row">
+              <img src={project.img} alt={project.title} />
+
+              <div className="project-content">
+                <h3>{project.title}</h3>
                 <p>{project.summary}</p>
-
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="project-link"
                 >
                   View project →
                 </a>
               </div>
             </div>
           ))}
-        </div>
+        </section>
       </Container>
     </HelmetProvider>
   );
