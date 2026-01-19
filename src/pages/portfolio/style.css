@@ -1,0 +1,73 @@
+/* Container */
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Row layout */
+.portfolio-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* LEFT IMAGE COLUMN */
+.portfolio-image {
+  width: 140px;          /* 🔒 fixed width */
+  height: 140px;         /* 🔒 fixed height */
+  flex-shrink: 0;
+  background: #0c0c0c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #222;
+}
+
+/* IMAGE ITSELF */
+.portfolio-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;  /* ✅ NO CROPPING */
+  opacity: 0.9;
+}
+
+/* RIGHT TEXT COLUMN */
+.portfolio-text {
+  max-width: 700px;
+}
+
+.portfolio-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 0.6rem;
+}
+
+/* LINK */
+.project-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.project-link:hover {
+  opacity: 0.7;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .portfolio-row {
+    flex-direction: column;
+  }
+
+  .portfolio-image {
+    width: 100%;
+    height: 160px;
+  }
+}
