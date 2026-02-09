@@ -49,8 +49,10 @@
 }
 
 .portfolio-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+  letter-spacing: 0.02em;
 }
 
 /* ===== SKILLS ===== */
@@ -61,8 +63,11 @@
 }
 
 .skill-card h4 {
+  font-size: 1.35rem;
+  font-weight: 600;
   margin-bottom: 0.4rem;
 }
+
 
 .skill-card p {
   color: #ccc;
@@ -77,16 +82,34 @@
 }
 
 .experience-item h4 {
-  margin-bottom: 0.2rem;
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
 .experience-item .org {
-  color: #aaa;
+  font-size: 1rem;
+  color: #b5b5b5;
 }
 
-.experience-item span {
+.experience-item .period {
   font-size: 0.85rem;
-  color: #777;
+  color: #888;
+}
+
+
+/* ===== EXPERIENCE BULLETS ===== */
+.experience-points {
+  margin-top: 0.75rem;
+  padding-left: 1.2rem;
+  color: #ccc;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.experience-points li {
+  margin-bottom: 0.45rem;
+  list-style-type: disc;
 }
 
 /* ===== PROJECTS ===== */
@@ -121,6 +144,15 @@
   font-size: 0.95rem;
   text-decoration: underline;
 }
+.project-date {
+  display: block;
+  font-size: 0.85rem;
+  color: #9aa0a6;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.3px;
+}
+
+
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {

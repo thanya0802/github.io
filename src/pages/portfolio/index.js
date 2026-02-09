@@ -23,7 +23,7 @@ export const Portfolio = () => {
         <section className="portfolio-hero">
           <h1>Profile Summary</h1>
           <p className="section-subtitle">
-            Academic Background and Teachnical Expertise
+            Academic Background and Technical Expertise
           </p>
 
           <p className="hero-text">
@@ -59,7 +59,13 @@ export const Portfolio = () => {
               <div key={i} className="experience-item">
                 <h4>{item.role}</h4>
                 <p className="org">{item.org}</p>
-                <span>{item.period}</span>
+                <span className="period">{item.period}</span>
+
+                <ul className="experience-points">
+                  {item.points.map((point, idx) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -75,7 +81,9 @@ export const Portfolio = () => {
 
               <div className="project-content">
                 <h3>{project.title}</h3>
+                <span className="project-date">{project.date}</span>
                 <p>{project.summary}</p>
+
                 <a
                   href={project.link}
                   target="_blank"
